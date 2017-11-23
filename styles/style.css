@@ -147,3 +147,12 @@ footer p{
 	font-size:75%;
 	text-align:center;
 }
+
+/* Styles for the admin page */
+.adminpage {
+  padding: 20px;
+}
+
+#adminpageh1 {
+  text-align: center;
+}
