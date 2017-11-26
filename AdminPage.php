@@ -21,14 +21,14 @@
 
     <table class="table table-bordered">
       <tr class="active">
-        <th width="110px">Id</th>
+        <!-- <th width="110px">Id</th> -->
         <th>First Name</th>
         <th>Last Name</th>
         <th>Actions</th>
       </tr>
       <tr>
         <!-- Sample data to delete later -->
-        <td>1</td>
+        <!-- <td>1</td> -->
         <td>Example First Name</td>
         <td>Example Last Name</td>
         <td width="200px"><button class="btn btn-info">View</button> <a href="editEmployee.php" class="btn btn-primary" role="button">Edit</a> <button class="btn btn-danger">Delete</button></td>
@@ -40,9 +40,9 @@
         while ($row = mysqli_fetch_assoc($employeeInfo))
         {
           print "<tr>";
-          print "<td>";
-          print $row['pk_eID'];
-          print "</td>";
+          // print "<td>";
+          // print $row['pk_eID'];
+          // print "</td>";
           print "<td>";
           print $row['pk_eFname'];
           print "</td>";
@@ -70,7 +70,7 @@
 
     </table>
 
-    <a>Create a New Employee</a>
+    <a href='addEmployee.php'>Create a New Employee</a>
 
     <br/>
 
