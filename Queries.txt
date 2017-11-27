@@ -1,0 +1,25 @@
+
+SET FOREIGN_KEY_CHECKS=0;
+
+INSERT INTO pk_employee (pk_eID, pk_eStartDate, pk_eEndDate, pk_eFname, pk_eMinit, pk_eLname, pk_eAddress, pk_eCity, pk_eState, pk_eZipCode, pk_eEmail, pk_eMobile, pk_eSsn, pk_eSex, pk_mID, pk_edID)
+VALUES (1, 19990202, 20170303, 'John', 'I', 'Doe', '1234 S. Woo hoo Ave.', 'Pico Rivera', 'Ca', '90210', 'john@abc.com', 12345678912, 333333333, 'M', 1, 1); 
+
+
+Insert into pk_customer(pk_cFname, pk_cMinit,pk_cLname,pk_cCompany,pk_cAddress,pk_cCity,pk_cState,pk_cZipCode,pk_cEmail,pk_cMobile,pk_eID) values('Mike','Q','Turner','Apple','678 Jobs Ave','San Fransico','CA','94125','apple@icloud.com',123456789,1);
+
+INSERT INTO pk_managers (pk_mID, pk_eID, pk_mBonus)
+VALUES (1, 1, 'New car'); 
+
+Insert into pk_department (pk_dName,pk_cID, pk_mdID) values('Shipping',1,1);
+
+Insert into pk_package (pk_PackageName,pk_Description,pk_cCompany,pk_Status,pk_cID, pk_eID) values ('Christmas','Christmas package','Home','Shipped',1,1);
+
+Insert into pk_Destination(pk_deName, pk_deCity,pk_deState, pk_deZipCode, pk_deCountryCode, pk_deTelephone, pk_dpID)values('Gary Oak','Palet Town', 'Kanto','89896',81,81123456789,1);
+
+Insert into pk_Source(pk_sName,pk_sCity,pk_sState, pk_sZipCode, pk_sCountryCode, pk_sTelephone, pk_spID) values ('Apple','San Fransico','CA','94321',1,'1432678345',1);
+
+Insert into pk_Transactions(pk_tTypeName,pk_tAmount,pk_tcID,pk_teID, pk_tBillingAddress,pk_tBillingCity, pk_tBillingState, pk_tBillingZipCode, pk_tBillingCountryCode,pk_tBillingTele)values('Credit',34.21,1,1,'678 Haley Ave','Los Angeles','CA',90065,1,'1323456789'); 
+
+Insert into pk_TimeDateStamp (pk_TimeID,pk_timecID, pk_timeeID, pk_timepID,pk_timetID)values(NOW(),1,1,1,1);
+
+SET FOREIGN_KEY_CHECKS=1;

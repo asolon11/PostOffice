@@ -10,7 +10,7 @@ CREATE TABLE `pk_Package` (
 );
 
 CREATE TABLE `pk_Customer` (
-  `pk_cID` int NOT NULL UNIQUE,
+  `pk_cID` int NOT NULL AUTO_INCREMENT UNIQUE,
   `pk_cFname` varchar(30) NOT NULL,
   `pk_cMinit` varchar(2) NOT NULL,
   `pk_cLname` varchar(30) NOT NULL,
