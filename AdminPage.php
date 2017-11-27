@@ -81,7 +81,7 @@
           <tr>
               <td><?php echo $row['pk_cFname']?></td>
               <td><?php echo $row['pk_cLname']?></td>
-              <td>
+              <td width="200px">
                   <a class="btn btn-info">View</a>
                   <a class="btn btn-primary" href="editCustomer.php?editCust=<?php echo $row['pk_cID']; ?> ">Edit</a>
                   <a class="btn btn-danger" href="updateTables.php?delCust=<?php echo $row['pk_cID']; ?>">Delete</a>
