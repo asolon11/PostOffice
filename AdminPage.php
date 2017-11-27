@@ -44,17 +44,9 @@
 
     <table class="table table-bordered">
       <tr class="active">
-        <!-- <th width="110px">Id</th> -->
         <th>First Name</th>
         <th>Last Name</th>
         <th>Actions</th>
-      </tr>
-      <tr>
-        <!-- Sample data to delete later -->
-        <!-- <td>1</td> -->
-        <td>Example First Name</td>
-        <td>Example Last Name</td>
-        <td width="200px"><button class="btn btn-info">View</button> <a href="editEmployee.php" class="btn btn-primary" role="button">Edit</a> <button class="btn btn-danger" href="addNewEmployee.php?delete=<?php echo $row['pk_eID']; ?>">Delete</button></td>
       </tr>
 
       <!-- Gets the information from the database -->
@@ -62,7 +54,7 @@
           <tr>
               <td><?php echo $row['pk_eFname']?></td>
               <td><?php echo $row['pk_eLname']?></td>
-              <td>
+              <td width="200px">
                   <a class="btn btn-info">View</a>
                   <a class="btn btn-primary" href="editEmployee.php?edit=<?php echo $row['pk_eID']; ?> ">Edit</a>
                   <a class="btn btn-danger" href="updateEmployeeTable.php?del=<?php echo $row['pk_eID']; ?>">Delete</a>
@@ -80,52 +72,22 @@
 
     <table class="table table-bordered">
       <tr class="active">
-        <!-- <th width="110px">Id</th> -->
         <th>First Name</th>
         <th>Last Name</th>
         <th>Actions</th>
       </tr>
-      <tr>
-        <!-- Sample data to delete later -->
-        <!-- <td>1</td> -->
-        <td>Customer First Name</td>
-        <td>Customer Last Name</td>
-        <td width="200px"><button class="btn btn-info">View</button> <button class="btn btn-primary">Edit</button> <button class="btn btn-danger" href="addNewEmployee.php?delete=<?php echo $row['pk_eID']?>">Delete</button></td>
-      </tr>
 
-      <!-- Gets the information from the database -->
-      <!-- <?php
-        $employeeInfo = mysqli_query($connect, "select pk_cID, pk_cFname, pk_cLname from pk_Customer");
-        while ($row = mysqli_fetch_assoc($employeeInfo))
-        {
-          print "<tr>";
-          print "<td>";
-          print $row['pk_cID'];
-          print "</td>";
-          print "<td>";
-          print $row['pk_cFname'];
-          print "</td>";
-          print "<td>";
-          print $row['pk_cLname'];
-          print "</td>";
-          print "<td width='200px'>";
-          $viewLink = "<a href ='CustomerPage.php?id="
-                      . $row['pk_cID']
-                      . "' class='btn btn-info' role='button'>View</a> ";
-          print $viewLink;
-          $editLink = "<a href='editCustomer.php?id="
-                      . $row['pk_cID']
-                      . "' class='btn btn-primary' role='button'>Edit</a> ";
-          print $editLink;
-          $deleteLink = "<a href='deleteCustomer.php?id="
-                      . $row['pk_cID']
-                      . "' class='btn btn-danger' role='button'>Delete</a>";
-          print $deleteLink;
-          print "</td>";
-          print "</tr>";
-        }
-
-      ?> -->
+      <?php while ($row = mysqli_fetch_array($customerResults)) { ?>
+          <tr>
+              <td><?php echo $row['pk_cFname']?></td>
+              <td><?php echo $row['pk_cLname']?></td>
+              <td>
+                  <a class="btn btn-info">View</a>
+                  <a class="btn btn-primary" href="editCustomer.php?editCust=<?php echo $row['pk_cID']; ?> ">Edit</a>
+                  <a class="btn btn-danger" href="updateEmployeeTable.php?delCust=<?php echo $row['pk_cID']; ?>">Delete</a>
+              </td>
+          </tr>
+      <?php } ?>
 
     </table>
 
