@@ -1,4 +1,4 @@
-<?php include('updateEmployeeTable.php');
+<?php include('updateTables.php');
 
     if (isset($_GET['edit'])) {
         $pk_eID = $_GET['edit'];
@@ -48,7 +48,7 @@
       ?></h3>
 
     <br/>
-    <form class="form-horizontal" action="updateEmployeeTable.php" method="POST" target="currentPage">
+    <form class="form-horizontal" action="updateTables.php" method="POST" target="currentPage">
       <div class="form-group">
         <label class="col-sm-2 control-label">Employee ID</label>
         <div class="col-sm-9">
