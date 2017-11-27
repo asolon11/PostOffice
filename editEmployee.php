@@ -1,32 +1,50 @@
+<?php include('updateEmployeeTable.php');
+
+    if (isset($_GET['edit'])) {
+        $pk_eID = $_GET['edit'];
+        $edit_state = true;
+
+        $rec = mysqli_query($db, "SELECT * FROM pk_Employee WHERE pk_eID=$pk_eID");
+        $record = mysqli_fetch_array($rec);
+        $pk_eID = $record['pk_eID'];
+        $pk_eStartDate = $record['pk_eStartDate'];
+        $pk_eEndDate = $record['pk_eEndDate'];
+        $pk_eFname = $record['pk_eFname'];
+        $pk_eMinit = $record['pk_eMinit'];
+        $pk_eLname = $record['pk_eLname'];
+        $pk_eAddress = $record['pk_eAddress'];
+        $pk_eCity = $record['pk_eCity'];
+        $pk_eState = $record['pk_eState'];
+        $pk_eZipCode = $record['pk_eZipCode'];
+        $pk_eEmail = $record['pk_eEmail'];
+        $pk_eMobile = $record['pk_eMobile'];
+        $pk_eSsn = $record['pk_eSsn'];
+        $pk_eSex = $record['pk_eSex'];
+        $pk_mID = $record['pk_mID'];
+        $pk_edID = $record['pk_edID'];
+
+    }
+?>
 <html>
   <head>
-    <?php
-      $connect = mysqli_connect("localhost", "root", "1234");
-      mysqli_select_db($connect, "packageDB");
-    ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
     <title>Edit Employee</title>
   </head>
   <body class="adminpage">
-    <?php
-      $getEmployee = "select * from pk_Employee where pk_eID = "
-                     . $_GET['id'] . ";";
-      $result = mysqli_query($connect, $getEmployee);
-      $row = mysqli_fetch_assoc($result);
-    ?>
 
     <h1 id="adminpageh1">Update Employee Information</h1>
     <hr width="550px"/>
 
       <br/>
       <h3><b>EMPLOYEE: </b>
+
       <?php
-        print $row['pk_eFname'];
+        print $pk_eFname;
         print " ";
-        print $row['pk_eMinit'];
+        print $pk_eMinit;
         print ". ";
-        print $row['pk_eLname'];
+        print $pk_eLname;
       ?></h3>
 
     <br/>
@@ -34,106 +52,77 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Employee ID</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eID" value=<?php print '"';
-                                                              print $row['pk_eID'];
-                                                              print '"';?>>
+          <input type="text" class="form-control" name="pk_eID" value="<?php echo $pk_eID;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Start Date</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eStartDate" value=<?php print '"';
-                                                              print $row['pk_eStartDate'];
-                                                              print '"';?>>
+          <input type="text" class="form-control" name="pk_eStartDate" value="<?php echo $pk_eStartDate;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">End Date</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eEndDate" value=<?php print '"';
-                                                              print $row['pk_eEndDate'];
-                                                              print '"';?>>
+          <input type="text" class="form-control" name="pk_eEndDate" value="<?php echo $pk_eEndDate;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Street</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eAddress" value=<?php print '"';
-                                                              print $row['pk_eAddress'];
-                                                              print '"';?>>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">State</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eState" value=<?php print '"';
-                                                              print $row['pk_eState'];
-                                                              print '"';?>>
+          <input type="text" class="form-control" name="pk_eAddress" value="<?php echo $pk_eAddress;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">City</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eCity" value=<?php print '"';
-                                                              print $row['pk_eCity'];
-                                                              print '"';?>>
+          <input type="text" class="form-control" name="pk_eCity" value="<?php echo $pk_eCity;?>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">State</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="pk_eState" value="<?php echo $pk_eState;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Zipcode</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eZipCode" value=<?php print '"';
-                                                              print $row['pk_eZipCode'];
-                                                              print '"';?>>
+          <input type="text" class="form-control" name="pk_eZipCode" value="<?php echo $pk_eZipCode;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-9">
-          <input type="email" class="form-control" name="pk_eEmail" value=<?php print '"';
-                                                               print $row['pk_eEmail'];
-                                                               print '"';?>>
+          <input type="email" class="form-control" name="pk_eEmail" value="<?php echo $pk_eEmail;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Mobile</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eMobile" value=<?php print '"';
-                                                              print $row['pk_eMobile'];
-                                                              print '"';?>>
+          <input type="text" class="form-control" name="pk_eMobile" value="<?php echo $pk_eMobile;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">SSN</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eSsn" value=<?php print '"';
-                                                              print $row['pk_eSsn'];
-                                                              print '"';?>>
+          <input type="text" class="form-control" name="pk_eSsn" value="<?php echo $pk_eSsn;?>">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Gender</label>
         <div class="col-sm-1">
-          <select class="form-control" name="pk_eSex">
-            <?php
-              $employeeInformation = "select * from pk_Employee";
-              $result = mysqli_query($connect, $employeeInformation);
-              while ($row = mysqli_fetch_assoc($result))
-              {
-                print "<option value='" .$row['pk_eSex'] . "'>" . $row['pk_eSex'] . "</option>". "\r\n";
-              }
-            ?>
-          </select>
+          <input type="text" class="form-control" name="pk_eSex" value="<?php echo $pk_eSex;?>">
         </div>
       </div>
 
@@ -141,14 +130,13 @@
         <label class="col-sm-2 control-label">Manager ID</label>
         <div class="col-sm-2">
           <select class="form-control" name="pk_mID">
-            <?php
-              $employeeInformation = "select * from pk_Employee";
-              $result = mysqli_query($connect, $employeeInformation);
-              while ($row = mysqli_fetch_assoc($result))
-              {
-                print "<option value='" .$row['pk_mID'] . "'>" . $row['pk_mID'] . "</option>". "\r\n";
-              }
-            ?>
+
+            <?php while ($row = mysqli_fetch_array($results)) { ?>
+                <option value="<?php echo $pk_mID;?>">
+                    <?php echo $pk_mID;?>
+                </option>
+            <?php } ?>
+
           </select>
         </div>
       </div>
@@ -156,27 +144,32 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Department ID</label>
         <div class="col-sm-2">
-          <select class="form-control"name="pk_edID">
-            <?php
-              $employeeInformation = "select * from pk_Employee";
-              $result = mysqli_query($connect, $employeeInformation);
-              while ($row = mysqli_fetch_assoc($result))
-              {
-                print "<option value='" .$row['pk_edID'] . "'>" . $row['pk_edID'] . "</option>". "\r\n";
-              }
-            ?>
-          </select>
+          <input type="text" class="form-control" name="pk_edID" value="<?php echo $pk_edID;?>">
         </div>
       </div>
 
+      <!-- this won't work for some reason.
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Department ID</label>
+        <div class="col-sm-2">
+          <select class="form-control" name="pk_edID">
+              <?php while ($row = mysqli_fetch_array($results)) {?>
+                  <option value="<?php echo $pk_edID;?>">
+                      <?php echo $pk_edID;?>
+                  </option>
+              <?php } ?>
+          </select>
+        </div>
+      </div> -->
+
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-primary">Update</button>
+          <button type="submit" name="update" class="btn btn-primary">Update</button>
         </div>
       </div>
     </form>
 
     <br/>
-    <a href="/PostOffice/AdminPage.php">Click here to return to Admin Page</a>
+    <a href="AdminPage.php">Click here to return to Admin Page</a>
   </body>
 </html>

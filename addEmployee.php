@@ -1,4 +1,4 @@
-<?php include('addNewEmployee.php');
+<?php include('updateEmployeeTable.php');
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 
       <br/>
 
-    <form class="form-horizontal" method="post" action="addNewEmployee.php">
+    <form class="form-horizontal" method="post" action="updateEmployeeTable.php">
       <!-- <input type="hidden" name="pk_eID" value="<?php echo $pk_eID; ?>"> -->
 
       <!-- <div class="form-group">
@@ -27,7 +27,7 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">First Name</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eFname" value="<?php echo $pk_eFname; ?>">
+          <input type="text" class="form-control" name="pk_eFname" placeholder="First Name" value="<?php echo $pk_eFname; ?>">
         </div>
       </div>
 
@@ -67,16 +67,16 @@
       </div>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">State</label>
+        <label class="col-sm-2 control-label">City</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eState" value="<?php echo $pk_eState; ?>">
+          <input type="text" class="form-control" name="pk_eCity" value="<?php echo $pk_eCity; ?>">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">City</label>
+        <label class="col-sm-2 control-label">State</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eCity" value="<?php echo $pk_eCity; ?>">
+          <input type="text" class="form-control" name="pk_eState" value="<?php echo $pk_eState; ?>">
         </div>
       </div>
 
