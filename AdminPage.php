@@ -1,4 +1,4 @@
-<?php include('updateEmployeeTable.php');
+<?php include('updateTables.php');
 
     if (isset($_GET['edit'])) {
         $pk_eID = $_GET['edit'];
@@ -57,7 +57,7 @@
               <td width="200px">
                   <a class="btn btn-info">View</a>
                   <a class="btn btn-primary" href="editEmployee.php?edit=<?php echo $row['pk_eID']; ?> ">Edit</a>
-                  <a class="btn btn-danger" href="updateEmployeeTable.php?del=<?php echo $row['pk_eID']; ?>">Delete</a>
+                  <a class="btn btn-danger" href="updateTables.php?del=<?php echo $row['pk_eID']; ?>">Delete</a>
               </td>
           </tr>
       <?php } ?>
@@ -84,7 +84,7 @@
               <td>
                   <a class="btn btn-info">View</a>
                   <a class="btn btn-primary" href="editCustomer.php?editCust=<?php echo $row['pk_cID']; ?> ">Edit</a>
-                  <a class="btn btn-danger" href="updateEmployeeTable.php?delCust=<?php echo $row['pk_cID']; ?>">Delete</a>
+                  <a class="btn btn-danger" href="updateTables.php?delCust=<?php echo $row['pk_cID']; ?>">Delete</a>
               </td>
           </tr>
       <?php } ?>

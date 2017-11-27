@@ -1,4 +1,4 @@
-<?php include('updateEmployeeTable.php');
+<?php include('updateTables.php');
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 
       <br/>
 
-    <form class="form-horizontal" method="post" action="updateEmployeeTable.php">
+    <form class="form-horizontal" method="post" action="updateTables.php">
       <!-- <input type="hidden" name="pk_eID" value="<?php echo $pk_eID; ?>"> -->
 
       <!-- <div class="form-group">
