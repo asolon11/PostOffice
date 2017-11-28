@@ -49,63 +49,63 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Customer ID</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_cID" value="<?php echo $pk_cID;?>">
+          <input type="text" class="form-control" name="pk_cID" value="<?php echo $pk_cID;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Company</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_cCompany" value="<?php echo $pk_cCompany;?>">
+          <input type="text" class="form-control" name="pk_cCompany" value="<?php echo $pk_cCompany;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Street</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_cAddress" value="<?php echo $pk_cAddress;?>">
+          <input type="text" class="form-control" name="pk_cAddress" value="<?php echo $pk_cAddress;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">City</label>
         <div class="col-sm-9">
-            <input type="text" class="form-control" name="pk_cCity" value="<?php echo $pk_cCity;?>">
+            <input type="text" class="form-control" name="pk_cCity" value="<?php echo $pk_cCity;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">State</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_cState" value="<?php echo $pk_cState;?>">
+          <input type="text" class="form-control" name="pk_cState" value="<?php echo $pk_cState;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">ZipCode</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_cZipCode" value="<?php echo $pk_cZipCode;?>">
+          <input type="text" class="form-control" name="pk_cZipCode" value="<?php echo $pk_cZipCode;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Email</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_cEmail" value="<?php echo $pk_cEmail;?>">
+          <input type="text" class="form-control" name="pk_cEmail" value="<?php echo $pk_cEmail;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Mobile</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" name="pk_cMobile" value="<?php echo $pk_cMobile;?>">
+          <input type="text" class="form-control" name="pk_cMobile" value="<?php echo $pk_cMobile;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Employee ID</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" name="pk_eID" value="<?php echo $pk_eID;?>">
+          <input type="text" class="form-control" name="pk_eID" value="<?php echo $pk_eID;?>" required>
 
           <!-- This is supposed to show a drop down menu with the employee's IDs but it won't work -->
           <!-- <select class="form-control"name="pk_eID">
