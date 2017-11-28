@@ -1,25 +1,58 @@
 
 SET FOREIGN_KEY_CHECKS=0;
 
+INSERT INTO pk_employee (pk_eStartDate, pk_eEndDate, pk_eFname, pk_eMinit, pk_eLname, pk_eAddress, pk_eCity, pk_eState, pk_eZipCode, pk_eEmail, pk_eMobile, pk_eSsn, pk_eSex, pk_mID, pk_edID)
+VALUES (19990202, 20150206, 'John', 'I', 'Doe', '1234 S. Woo hoo Ave.', 'Pico Rivera', 'Ca', '90210', 'john@abc.com', 12345678912, 333333333, 'M', 1, 1);
+
 INSERT INTO pk_employee (pk_eID, pk_eStartDate, pk_eEndDate, pk_eFname, pk_eMinit, pk_eLname, pk_eAddress, pk_eCity, pk_eState, pk_eZipCode, pk_eEmail, pk_eMobile, pk_eSsn, pk_eSex, pk_mID, pk_edID)
-VALUES (1, 19990202, 20170303, 'John', 'I', 'Doe', '1234 S. Woo hoo Ave.', 'Pico Rivera', 'Ca', '90210', 'john@abc.com', 12345678912, 333333333, 'M', 1, 1); 
+VALUES (19980101, 20190808, 'Jason', '', 'Smith', '123 6th St.', 'Melbourne', 'FL', '32904', 'mthurn@live.com', 12515469442, 444444444, 'M', 1, 1); 
+
+INSERT INTO pk_employee (pk_eID, pk_eStartDate, pk_eEndDate, pk_eFname, pk_eMinit, pk_eLname, pk_eAddress, pk_eCity, pk_eState, pk_eZipCode, pk_eEmail, pk_eMobile, pk_eSsn, pk_eSex, pk_mID, pk_edID)
+VALUES (19970404, 20080109, 'Jane', 'M', 'Jones', '71 Pilgrim Avenue', 'Chevy Chase', 'MD', '20815', 'fangorn@hotmail.com', 11255464478, 5555555555, 'F', 1, 1); 
+
+INSERT INTO pk_employee (pk_eID, pk_eStartDate, pk_eEndDate, pk_eFname, pk_eMinit, pk_eLname, pk_eAddress, pk_eCity, pk_eState, pk_eZipCode, pk_eEmail, pk_eMobile, pk_eSsn, pk_eSex, pk_mID, pk_edID)
+VALUES (19990303, 20120911, 'Mary', 'S', 'Valdez', '70 Bowman St.', 'South Windsor', 'CT', '06074', 'webdragon@comcast.net', 19495694371, 66666666, 'F', 1, 1);  
 
 
 Insert into pk_customer(pk_cFname, pk_cMinit,pk_cLname,pk_cCompany,pk_cAddress,pk_cCity,pk_cState,pk_cZipCode,pk_cEmail,pk_cMobile,pk_eID) values('Mike','Q','Turner','Apple','678 Jobs Ave','San Fransico','CA','94125','apple@icloud.com',123456789,1);
+Insert into pk_customer(pk_cFname, pk_cMinit,pk_cLname,pk_cCompany,pk_cAddress,pk_cCity,pk_cState,pk_cZipCode,pk_cEmail,pk_cMobile,pk_eID) values('Angela','H','Castro','Google','4 Goldfield Rd. ','Honolulu','HI','96815','firstpr@att.net',16304468851,2);
+Insert into pk_customer(pk_cFname, pk_cMinit,pk_cLname,pk_cCompany,pk_cAddress,pk_cCity,pk_cState,pk_cZipCode,pk_cEmail,pk_cMobile,pk_eID) values('Jose','','Macias','Brazzers','44 Shirley Ave.','West Chicago','IL','60185','drezet@me.com',12269062721,3);
+Insert into pk_customer(pk_cFname, pk_cMinit,pk_cLname,pk_cCompany,pk_cAddress,pk_cCity,pk_cState,pk_cZipCode,pk_cEmail,pk_cMobile,pk_eID) values('Michael','','Hsu','CSULA','6514 S. Magnolia St.','Orlando','FL','32806','miyop@icloud.com',16719251352,4);
 
 INSERT INTO pk_managers (pk_mID, pk_eID, pk_mBonus)
-VALUES (1, 1, 'New car'); 
+VALUES (1, 1, 'New car');
+
+INSERT INTO pk_managers (pk_mID, pk_eID, pk_mBonus)
+VALUES (2, 3, '3k'); 
+
+INSERT INTO pk_managers (pk_mID, pk_eID, pk_mBonus)
+VALUES (4, 2, '5k');  
 
 Insert into pk_department (pk_dName,pk_cID, pk_mdID) values('Shipping',1,1);
+Insert into pk_department (pk_dName,pk_cID, pk_mdID) values('Recieving',2,2);
+Insert into pk_department (pk_dName,pk_cID, pk_mdID) values('Processing',3,3);
+Insert into pk_department (pk_dName,pk_cID, pk_mdID) values('Claims',4,1);
 
 Insert into pk_package (pk_PackageName,pk_Description,pk_cCompany,pk_Status,pk_cID, pk_eID) values ('Christmas','Christmas package','Home','Shipped',1,1);
+Insert into pk_package (pk_PackageName,pk_Description,pk_cCompany,pk_Status,pk_cID, pk_eID) values ('Documents','Legal Papers','Celino and Barnes','Delayed',2,2);
+Insert into pk_package (pk_PackageName,pk_Description,pk_cCompany,pk_Status,pk_cID, pk_eID) values ('Birthday','Birthday package','','In Transit',3,3);
+Insert into pk_package (pk_PackageName,pk_Description,pk_cCompany,pk_Status,pk_cID, pk_eID) values ('Wedding','Wedding present','','Claims',4,4);
 
-Insert into pk_Destination(pk_deName, pk_deCity,pk_deState, pk_deZipCode, pk_deCountryCode, pk_deTelephone, pk_dpID)values('Gary Oak','Palet Town', 'Kanto','89896',81,81123456789,1);
+Insert into pk_Destination(pk_deName, pk_deCity,pk_deState, pk_deZipCode, pk_deCountryCode, pk_deTelephone, pk_dpID)values('Gary Oak','1 Palmdale','Palet Town', 'Kanto','89896',81,81123456789,1);
+Insert into pk_Destination(pk_deName, pk_deCity,pk_deState, pk_deZipCode, pk_deCountryCode, pk_deTelephone, pk_dpID)values('Mary Irwin','70 Bowman St.', 'New York','New York','11212',1,12345672345,2);
+Insert into pk_Destination(pk_deName, pk_deCity,pk_deState, pk_deZipCode, pk_deCountryCode, pk_deTelephone, pk_dpID)values('John Cena','28 Cemetery Drive','Hollywood', 'California','90059',1,12342342345,3);
+Insert into pk_Destination(pk_deName, pk_deCity,pk_deState, pk_deZipCode, pk_deCountryCode, pk_deTelephone, pk_dpID)values('Ben Tenasin','28 Ocean Ave.','Oakville', 'Texas','23456',1,12345672335,4);
 
 Insert into pk_Source(pk_sName,pk_sCity,pk_sState, pk_sZipCode, pk_sCountryCode, pk_sTelephone, pk_spID) values ('Apple','San Fransico','CA','94321',1,'1432678345',1);
+Insert into pk_Source(pk_sName,pk_sCity,pk_sState, pk_sZipCode, pk_sCountryCode, pk_sTelephone, pk_spID) values ('Google','Silicon Valley','CA','94231',1,'1422578345',2);
+Insert into pk_Source(pk_sName,pk_sCity,pk_sState, pk_sZipCode, pk_sCountryCode, pk_sTelephone, pk_spID) values ('Oracle','Orlando','FL','32806',1,'1432658245',3);
+Insert into pk_Source(pk_sName,pk_sCity,pk_sState, pk_sZipCode, pk_sCountryCode, pk_sTelephone, pk_spID) values ('IBM','West Chicago','IL','60185',1,'1432591345',4);
 
 Insert into pk_Transactions(pk_tTypeName,pk_tAmount,pk_tcID,pk_teID, pk_tBillingAddress,pk_tBillingCity, pk_tBillingState, pk_tBillingZipCode, pk_tBillingCountryCode,pk_tBillingTele)values('Credit',34.21,1,1,'678 Haley Ave','Los Angeles','CA',90065,1,'1323456789'); 
 
 Insert into pk_TimeDateStamp (pk_TimeID,pk_timecID, pk_timeeID, pk_timepID,pk_timetID)values(NOW(),1,1,1,1);
+Insert into pk_TimeDateStamp (pk_TimeID,pk_timecID, pk_timeeID, pk_timepID,pk_timetID)values(NOW(),2,2,2,2);
+Insert into pk_TimeDateStamp (pk_TimeID,pk_timecID, pk_timeeID, pk_timepID,pk_timetID)values(NOW(),3,3,3,3);
+Insert into pk_TimeDateStamp (pk_TimeID,pk_timecID, pk_timeeID, pk_timepID,pk_timetID)values(NOW(),4,4,4,4);
 
 SET FOREIGN_KEY_CHECKS=1;
