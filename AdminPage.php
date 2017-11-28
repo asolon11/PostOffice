@@ -30,7 +30,7 @@
               <td><?php echo $row['pk_eFname']?></td>
               <td><?php echo $row['pk_eLname']?></td>
               <td width="200px">
-                  <a class="btn btn-info">View</a>
+                  <a class="btn btn-info" href="viewEmployee.php?viewEmployee=<?php echo $row['pk_eID']?>">View</a>
                   <a class="btn btn-primary" href="editEmployee.php?edit=<?php echo $row['pk_eID']; ?> ">Edit</a>
                   <a class="btn btn-danger" href="updateTables.php?del=<?php echo $row['pk_eID']; ?>">Delete</a>
               </td>
@@ -57,7 +57,7 @@
               <td><?php echo $row['pk_cFname']?></td>
               <td><?php echo $row['pk_cLname']?></td>
               <td width="200px">
-                  <a class="btn btn-info">View</a>
+                  <a class="btn btn-info" href="viewCustomer.php?viewCust=<?php echo $row['pk_cID']?>">View</a>
                   <a class="btn btn-primary" href="editCustomer.php?editCust=<?php echo $row['pk_cID']; ?> ">Edit</a>
                   <a class="btn btn-danger" href="updateTables.php?delCust=<?php echo $row['pk_cID']; ?>">Delete</a>
               </td>
