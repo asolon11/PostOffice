@@ -12,7 +12,6 @@ CREATE TABLE `pk_Package` (
 CREATE TABLE `pk_Customer` (
   `pk_cID` int NOT NULL AUTO_INCREMENT UNIQUE,
   `pk_cFname` varchar(30) NOT NULL,
-  `pk_cMinit` varchar(2) NOT NULL,
   `pk_cLname` varchar(30) NOT NULL,
   `pk_cCompany` varchar(30),
   `pk_cAddress` varchar(30) NOT NULL,
@@ -20,10 +19,26 @@ CREATE TABLE `pk_Customer` (
   `pk_cState` varchar(2) NOT NULL,
   `pk_cZipCode` char(5),
   `pk_cEmail` varchar(30) NOT NULL UNIQUE,
-  `pk_cMobile` char(11) NOT NULL DEFAULT '00000000000',
-  `pk_eID` int NOT NULL UNIQUE,
+  `pk_cMobile` char(10) NOT NULL DEFAULT '0000000000',
   PRIMARY KEY (`pk_cID`)
 );
+
+CREATE TABLE `pk_Customer_login` (
+  `pk_customerID` int(11),
+  `pk_employeeID` int(11),
+  `pk_username` varchar(30) DEFAULT NULL,
+  `pk_password` varchar(30) DEFAULT NULL
+);
+
+DELIMITER $$
+  CREATE TRIGGER id_both_null BEFORE INSERT ON pk_Customer_login
+    FOR EACH ROW BEGIN
+      IF(new.pk_customerID IS NULL AND new.pk_employeeID IS NULL) THEN
+        SIGNAL SQLSTATE '12345'
+        SET MESSAGE_TEXT = "customerID and employeeID both cannot be both null";
+      END IF;
+  END$$
+DELIMITER ;
 
 CREATE TABLE `pk_Department` (
   `pk_dID` int NOT NULL AUTO_INCREMENT UNIQUE,
