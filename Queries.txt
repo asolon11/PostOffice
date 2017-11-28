@@ -8,7 +8,7 @@ INSERT INTO pk_employee (pk_eStartDate, pk_eEndDate, pk_eFname, pk_eMinit, pk_eL
 VALUES (19980101, 20190808, 'Jason', '', 'Smith', '123 6th St.', 'Melbourne', 'FL', '32904', 'mthurn@live.com', 12515469442, 444444444, 'M', 2, 1); 
 
 INSERT INTO pk_employee (pk_eStartDate, pk_eEndDate, pk_eFname, pk_eMinit, pk_eLname, pk_eAddress, pk_eCity, pk_eState, pk_eZipCode, pk_eEmail, pk_eMobile, pk_eSsn, pk_eSex, pk_mID, pk_edID)
-VALUES (19970404, 20080109, 'Jane', 'M', 'Jones', '71 Pilgrim Avenue', 'Chevy Chase', 'MD', '20815', 'fangorn@hotmail.com', 11255464478, 5555555555, 'F', 2, 1); 
+VALUES (19970404, 20080109, 'Jane', 'M', 'Jones', '71 Pilgrim Avenue', 'Chevy Chase', 'MD', '20815', 'fangorn@hotmail.com', 11255464478, 555555555, 'F', 2, 1); 
 
 INSERT INTO pk_employee (pk_eStartDate, pk_eEndDate, pk_eFname, pk_eMinit, pk_eLname, pk_eAddress, pk_eCity, pk_eState, pk_eZipCode, pk_eEmail, pk_eMobile, pk_eSsn, pk_eSex, pk_mID, pk_edID)
 VALUES (19990303, 20120911, 'Mary', 'S', 'Valdez', '70 Bowman St.', 'South Windsor', 'CT', '06074', 'webdragon@comcast.net', 19495694371, 66666666, 'F', 4, 1);  
