@@ -52,99 +52,91 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Employee ID</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eID" value="<?php echo $pk_eID;?>">
+          <input type="text" class="form-control" name="pk_eID" value="<?php echo $pk_eID;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Start Date</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eStartDate" value="<?php echo $pk_eStartDate;?>">
+          <input type="text" class="form-control" name="pk_eStartDate" value="<?php echo $pk_eStartDate;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">End Date</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eEndDate" value="<?php echo $pk_eEndDate;?>">
+          <input type="text" class="form-control" name="pk_eEndDate" value="<?php echo $pk_eEndDate;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Street</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eAddress" value="<?php echo $pk_eAddress;?>">
+          <input type="text" class="form-control" name="pk_eAddress" value="<?php echo $pk_eAddress;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">City</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eCity" value="<?php echo $pk_eCity;?>">
+          <input type="text" class="form-control" name="pk_eCity" value="<?php echo $pk_eCity;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">State</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eState" value="<?php echo $pk_eState;?>">
+          <input type="text" class="form-control" name="pk_eState" value="<?php echo $pk_eState;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Zipcode</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eZipCode" value="<?php echo $pk_eZipCode;?>">
+          <input type="text" class="form-control" name="pk_eZipCode" value="<?php echo $pk_eZipCode;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-9">
-          <input type="email" class="form-control" name="pk_eEmail" value="<?php echo $pk_eEmail;?>">
+          <input type="email" class="form-control" name="pk_eEmail" value="<?php echo $pk_eEmail;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Mobile</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eMobile" value="<?php echo $pk_eMobile;?>">
+          <input type="text" class="form-control" name="pk_eMobile" value="<?php echo $pk_eMobile;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">SSN</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="pk_eSsn" value="<?php echo $pk_eSsn;?>">
+          <input type="text" class="form-control" name="pk_eSsn" value="<?php echo $pk_eSsn;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Gender</label>
         <div class="col-sm-1">
-          <input type="text" class="form-control" name="pk_eSex" value="<?php echo $pk_eSex;?>">
+          <input type="text" class="form-control" name="pk_eSex" value="<?php echo $pk_eSex;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Manager ID</label>
         <div class="col-sm-2">
-          <select class="form-control" name="pk_mID">
-
-            <?php while ($row = mysqli_fetch_array($results)) { ?>
-                <option value="<?php echo $pk_mID;?>">
-                    <?php echo $pk_mID;?>
-                </option>
-            <?php } ?>
-
-          </select>
+          <input type="text" class="form-control" name="pk_mID" value="<?php echo $pk_mID;?>" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Department ID</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" name="pk_edID" value="<?php echo $pk_edID;?>">
+          <input type="text" class="form-control" name="pk_edID" value="<?php echo $pk_edID;?>" required>
         </div>
       </div>
 
