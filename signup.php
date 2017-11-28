@@ -5,9 +5,9 @@
 
   if($_SERVER["REQUEST_METHOD"] == 'POST') {
     $connect = mysqli_connect('localhost', 'root', '');
-    mysqli_select_db($connect, '');
-    $emailQuery = "SELECT * FROM customer WHERE cEmail ='" .$_POST['email']. "';";
-    $userQuery = "SELECT * FROM customer_login WHERE username ='" .$_POST['user']. "';";
+    mysqli_select_db($connect, 'test');
+    $emailQuery = "SELECT * FROM pk_Customer WHERE pk_cEmail ='" .$_POST['email']. "';";
+    $userQuery = "SELECT * FROM pk_Customer_login WHERE pk_username ='" .$_POST['user']. "';";
 
     if(mysqli_num_rows(mysqli_query($connect, $emailQuery)) > 0 && mysqli_num_rows(mysqli_query($connect, $userQuery)) > 0) {
       $emailphp = "Email used already";
@@ -20,20 +20,22 @@
        $userphp = "Username taken already";
     }
     else {
-        $addUser = "INSERT INTO customer(cFname, cLastName, cBusinessName, cAddress, cZip_Code, cMobile_Pho, cEmail) values('"
+        $addUser = "INSERT INTO pk_Customer(pk_cFname, pk_cLname, pk_cCompany, pk_cAddress, pk_cCity, pk_cState, pk_cZipCode, pk_cEmail, pk_cMobile) values('"
           .$_POST['fname']."','"
           .$_POST['lname']."','"
           .$_POST['cname']."','"
-          .$_POST['street'].' '.$_POST['city']. ' ' .strtoupper($_POST['state'])."','"
+          .$_POST['street']."','"
+          .$_POST['city']."','"
+          .strtoupper($_POST['state'])."','"
           .$_POST['zip']."','"
-          .$_POST['phone']."','"
-          .$_POST['email']."'); ";
+          .$_POST['email']."','"
+          .$_POST['phone']."'); ";
         mysqli_query($connect, $addUser);
 
-        $result = mysqli_query($connect, "SELECT customerID FROM customer WHERE cEmail ='" .$_POST['email']. "' LIMIT 1;");
+        $result = mysqli_query($connect, "SELECT pk_cID FROM pk_customer WHERE pk_cEmail ='" .$_POST['email']. "' LIMIT 1;");
         $customerID = mysqli_fetch_array($result);
-        $addUserLogin = "INSERT INTO customer_login(employeeID, customerID, username, password) values (null,'"
-         .$customerID['customerID']."', '"
+        $addUserLogin = "INSERT INTO pk_Customer_login(pk_employeeID, pk_customerID, pk_username, pk_password) values (null,'"
+         .$customerID['pk_cID']."', '"
          .$_POST['user']."','"
          .$_POST['pwd']."'); ";
 
@@ -241,9 +243,9 @@
               phone: {
                   validators: {
                       stringLength: {
-                          min: 11,
-                          max:11,
-                          message:'Please follow this format, 16261112222'
+                          min: 10,
+                          max:10,
+                          message:'Please follow this format, 6261112222'
                       },
                       notEmpty: {
                           message: 'Cannot be empty'

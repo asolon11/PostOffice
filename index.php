@@ -2,13 +2,13 @@
   $userphp = null;
   if($_SERVER["REQUEST_METHOD"] == 'POST') {
       $connect = mysqli_connect('localhost', 'root', '');
-      mysqli_select_db($connect, '');
-      $result= mysqli_query($connect, "SELECT password FROM customer_login WHERE username ='" .$_POST['username']. "';");
+      mysqli_select_db($connect, 'test');
+      $result= mysqli_query($connect, "SELECT pk_password FROM pk_Customer_login WHERE pk_username ='" .$_POST['username']. "';");
 
       $password = mysqli_fetch_array($result);
-      if($password['password'] == null || $password['password'] != $_POST['pwd'])
+      if($password['pk_password'] == null || $password['pk_password'] != $_POST['pwd'])
         $userphp = "The username and password you entered did not match our records";
-      else if($password['password'] == $_POST['pwd']) {
+      else if($password['pk_password'] == $_POST['pwd']) {
         session_start();
         $_SESSION['username'] = $_POST['username'];
         header("location: welcome.php");
