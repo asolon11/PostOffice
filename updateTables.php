@@ -136,11 +136,99 @@
         header('location: AdminPage.php');
     }
 
+    // Department
+    if (isset($_POST['addDept'])) {
+        // $pk_dID = $_POST['pk_dID'];
+        $pk_dName = $_POST['pk_dName'];
+        $pk_cID = $_POST['pk_cID'];
+        $pk_mdID = $_POST['pk_mdID'];
+
+        $query = "INSERT INTO pk_Department (pk_dName, pk_cID, pk_mdID) VALUES ('$pk_dName', $pk_cID, $pk_mdID)";
+        mysqli_query($db, $query);
+        header('location: AdminPage.php');
+    }
+
+    if (isset($_POST['editDept'])) {
+      $pk_dID = $_POST['pk_dID'];
+      $pk_dName = $_POST['pk_dName'];
+      $pk_cID = $_POST['pk_cID'];
+      $pk_mdID = $_POST['pk_mdID'];
+
+        mysqli_query($db, "UPDATE pk_Department SET pk_dID=$pk_dID, pk_dName='$pk_dName', pk_cID=$pk_cID, pk_mdID=$pk_mdID WHERE pk_dID=$pk_dID");
+        // $_SESSION['msg'] = "Address updated";
+        header('location: AdminPage.php');
+    }
+
+    if (isset($_GET['delDept'])) {
+       $pk_dID = $_GET['delDept'];
+       mysqli_query($db, "DELETE FROM pk_Department WHERE pk_dID=$pk_dID");
+       // $_SESSION['msg'] = "Address deleted";
+       header('location: AdminPage.php');
+    }
+
+    // Destination
+    if (isset($_POST['addDest'])) {
+        // $pk_deID = $_POST['pk_deID'];
+        $pk_deName = $_POST['pk_deName'];
+        $pk_deCity = $_POST['pk_deCity'];
+        $pk_deState = $_POST['pk_deState'];
+        $pk_deZipCode = $_POST['pk_deZipCode'];
+        $pk_deCountryCode = $_POST['pk_deCountryCode'];
+        $pk_deTelephone = $_POST['pk_deTelephone'];
+        $pk_dpID = $_POST['pk_dpID'];
+
+        $query = "INSERT INTO pk_Destination (pk_deName, pk_deCity, pk_deState, pk_deZipCode, pk_deCountryCode, pk_deTelephone, pk_dpID) VALUES ('$pk_deName', '$pk_deCity', '$pk_deState', '$pk_deZipCode', '$pk_deCountryCode', '$pk_deTelephone', $pk_dpID)";
+        mysqli_query($db, $query);
+        header('location: AdminPage.php');
+    }
+
+    if (isset($_POST['editDest'])) {
+        $pk_deID = $_POST['pk_deID'];
+        $pk_deName = $_POST['pk_deName'];
+        $pk_deCity = $_POST['pk_deCity'];
+        $pk_deState = $_POST['pk_deState'];
+        $pk_deZipCode = $_POST['pk_deZipCode'];
+        $pk_deCountryCode = $_POST['pk_deCountryCode'];
+        $pk_deTelephone = $_POST['pk_deTelephone'];
+        $pk_dpID = $_POST['pk_dpID'];
+
+        mysqli_query($db, "UPDATE pk_Destination SET pk_deID=$pk_deID, pk_deName='$pk_deName', pk_deCity='$pk_deCity', pk_deState='$pk_deState', pk_deZipCode='$pk_deZipCode', pk_deCountryCode='$pk_deCountryCode', pk_deTelephone='$pk_deTelephone', pk_dpID='$pk_dpID' WHERE pk_deID=$pk_deID");
+        // $_SESSION['msg'] = "Address updated";
+        header('location: AdminPage.php');
+    }
+
+    if (isset($_GET['delDest'])) {
+       $pk_deID = $_GET['delDest'];
+       mysqli_query($db, "DELETE FROM pk_Destination WHERE pk_deID=$pk_deID");
+       // $_SESSION['msg'] = "Address deleted";
+       header('location: AdminPage.php');
+    }
+
     // retrieve records (Employee Table)
     $results = mysqli_query($db, "SELECT * FROM pk_Employee");
 
     // retrieve records (Customer Table)
     $customerResults = mysqli_query($db, "SELECT * FROM pk_Customer");
 
+    // retrieve department records
+    $departmentResults = mysqli_query($db, "SELECT * FROM pk_Department");
+
+    // retrieve destination records
+    $destinationResults = mysqli_query($db, "SELECT * FROM pk_Destination");
+
+    // package
+    $packageResults = mysqli_query($db, "SELECT * FROM pk_Package");
+
+    // manager
+    $managersResults = mysqli_query($db, "SELECT * FROM pk_Managers");
+
+    // source
+    $sourceResults = mysqli_query($db, "SELECT * FROM pk_Source");
+
+    // TimeDateStamp
+    $tdsResults = mysqli_query($db, "SELECT * FROM pk_TimeDateStamp");
+
+    // transactions
+    $transactionsResults = mysqli_query($db, "SELECT * FROM pk_Transactions");
 
 ?>
