@@ -73,30 +73,30 @@ CREATE TABLE `pk_Destination` (
 );
 
 CREATE TABLE `pk_Source` (
-  `pk_sID` int NOT NULL AUTO_INCREMENT UNIQUE,
-  `pk_sName` varchar(30) NOT NULL,
-  `pk_sCity` varchar(30) NOT NULL,
-  `pk_sState` varchar(30) NOT NULL,
-  `pk_sZipCode` char(5) NOT NULL,
-  `pk_sCountryCode` varchar(2) NOT NULL,
-  `pk_sTelephone` char(11) NOT NULL DEFAULT '00000000000',
-  `pk_spID` int NOT NULL UNIQUE,
-  PRIMARY KEY (`pk_sID`)
+    `pk_sID` int NOT NULL AUTO_INCREMENT UNIQUE,
+    `pk_sName` varchar(30) NOT NULL,
+    `pk_sCity` varchar(30) NOT NULL,
+    `pk_sState` varchar(30) NOT NULL,
+    `pk_sZipCode` char(5) NOT NULL,
+    `pk_sCountryCode` varchar(2) NOT NULL,
+    `pk_sTelephone` char(11) NOT NULL,
+    `pk_spID` int NOT NULL,
+    PRIMARY KEY (`pk_sID`)
 );
 
 CREATE TABLE `pk_Transactions` (
-  `pk_tID` int NOT NULL AUTO_INCREMENT,
-  `pk_tTypeName` varchar(30) NOT NULL,
-  `pk_tAmount` DECIMAL NOT NULL DEFAULT '0.0',
-  `pk_tcID` int NOT NULL UNIQUE,
-  `pk_teID` int NOT NULL UNIQUE,
-  `pk_tBillingAddress` varchar(30) NOT NULL,
-  `pk_tBillingCity` varchar(30) NOT NULL,
-  `pk_tBillingState` varchar(30) NOT NULL,
-  `pk_tBillingZipCode` char(5) NOT NULL DEFAULT '00000',
-  `pk_tBillingCountryCode` varchar(2) NOT NULL,
-  `pk_tBillingTele` char(11) NOT NULL DEFAULT '00000000000',
-  PRIMARY KEY (`pk_tID`)
+    `pk_tID` int NOT NULL AUTO_INCREMENT,
+    `pk_tTypeName` varchar(30) NOT NULL,
+    `pk_tAmount` DECIMAL NOT NULL DEFAULT '0.0',
+    `pk_tcID` int NOT NULL UNIQUE,
+    `pk_teID` int NOT NULL UNIQUE,
+    `pk_tBillingAddress` varchar(30) NOT NULL,
+    `pk_tBillingCity` varchar(30) NOT NULL,
+    `pk_tBillingState` varchar(30) NOT NULL,
+    `pk_tBillingZipCode` char(5) NOT NULL DEFAULT '00000',
+    `pk_tBillingCountryCode` varchar(2) NOT NULL,
+    `pk_tBillingTele` char(11) NOT NULL DEFAULT '00000000000',
+    PRIMARY KEY (`pk_tID`)
 );
 
 CREATE TABLE `pk_TimeDateStamp` (
